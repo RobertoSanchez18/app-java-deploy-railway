@@ -37,7 +37,7 @@ jobs:
         run: mvn clean package -DskipTests
 
       - name: Deploy to Railway
-        uses: bervProject/railway-deploy@main
+        uses: bervProject/railway-deploy@0.1.2-beta
         with:
           service: ${{  env.RAILWAY_SERVICE }}
           detach: true
