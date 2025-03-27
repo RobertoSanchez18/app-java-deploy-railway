@@ -39,5 +39,5 @@ jobs:
       - name: Deploy to Railway
         uses: bervProject/railway-deploy@0.1.2-beta
         with:
+          railway_token: ${{ env.RAILWAY_TOKEN }}
           service: ${{  env.RAILWAY_SERVICE }}
-          detach: true
