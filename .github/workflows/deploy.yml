@@ -5,6 +5,11 @@ on:
     branches:
       - master
 
+env:
+  RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+  RAILWAY_SERVICE: my-service
+
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04
@@ -33,7 +38,6 @@ jobs:
 
       - name: Deploy to Railway
         uses: bervProject/railway-deploy@main
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         with:
-          service: "my-service"
+          service: ${{  env.RAILWAY_SERVICE }}
+          detach: true
